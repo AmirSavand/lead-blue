@@ -2,12 +2,14 @@
 
 public class Player : MonoBehaviour
 {
+    public string targetTag;
     public float pushForce;
     public float jumpForce;
     public float jumpDuration;
-    public string targetTag;
 
     public ParticleSystem moveParticle;
+
+    private bool canMove;
 
     private Rigidbody rb;
 
@@ -15,6 +17,16 @@ public class Player : MonoBehaviour
     {
         // Init vars
         rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        // Press up key and can move
+        if (Input.GetKeyUp(KeyCode.Return) && canMove)
+        {
+            // Go
+            GoToTarget();
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -44,8 +56,8 @@ public class Player : MonoBehaviour
         // Push up
         rb.AddForce(Vector3.up * jumpForce);
 
-        // Go to target after a while
-        Invoke("GoToTarget", jumpDuration);
+        // Can move
+        canMove = true;
     }
 
     /**
@@ -70,9 +82,15 @@ public class Player : MonoBehaviour
 
             // Push to target
             rb.AddRelativeForce(0, 0, pushForce);
+
+            // Can't move
+            canMove = false;
         }
     }
 
+    /**
+     * Find the next target and return its transform
+     */
     public Transform FindTarget()
     {
         // Find a target

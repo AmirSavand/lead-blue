@@ -240,10 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac03d19c8f6c08343a0858d1be3cd204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTag: Hit
   pushForce: 4000
   jumpForce: 500
   jumpDuration: 1
-  targetTag: Hit
   moveParticle: {fileID: 1266538080}
 --- !u!1 &170076733
 GameObject:
