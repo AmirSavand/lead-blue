@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33730646598937096}
   - component: {fileID: 23877866421476320}
   - component: {fileID: 135053579752556864}
+  - component: {fileID: 114396270344180298}
   m_Layer: 0
-  m_Name: Hit
-  m_TagString: Hit
+  m_Name: Empty Hit
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +85,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322251643078854}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114396270344180298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1322251643078854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a28dbaaf751ab46b20fdc9bcd93db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitName: Empty
+  score: 0
 --- !u!135 &135053579752556864
 SphereCollider:
   m_ObjectHideFlags: 1

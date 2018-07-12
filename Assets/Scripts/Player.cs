@@ -2,7 +2,6 @@
 
 public class Player : MonoBehaviour
 {
-    public string targetTag;
     public float pushForce;
     public float jumpForce;
     public float jumpDuration;
@@ -13,7 +12,7 @@ public class Player : MonoBehaviour
     private bool canMove = true;
 
     private Rigidbody rb;
-    private Collider lastHit;
+    private Hit lastHit;
 
     void Start()
     {
@@ -23,27 +22,53 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Press up key and can move
-        if (Input.GetKeyUp(KeyCode.Return) && canMove)
+        // Can move (is jumping)
+        if (canMove)
         {
-            // Go
-            GoToTarget();
+            int hitIndex = -1;
+
+            // Press right key
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                hitIndex = 0;
+            }
+
+            // Press up key
+            else if (Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                hitIndex = 1;
+            }
+
+            // Press left key
+            else if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                hitIndex = 2;
+            }
+
+            // Press any key
+            if (hitIndex != -1)
+            {
+                GoToTarget(hitIndex);
+            }
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
+        // Get other's Hit component
+        Hit hit = other.GetComponent<Hit>();
+
         // Is it a new hit target
-        if (other.CompareTag(targetTag) && lastHit != other)
+        if (hit != null && lastHit != hit)
         {
             // Store it so we don't hit it again
-            lastHit = other;
+            lastHit = hit;
 
             // Destroy it
             Destroy(other.gameObject);
 
             // Callback
-            game.OnHit();
+            game.OnHit(hit);
 
             // Do the jump
             Jump();
@@ -71,13 +96,13 @@ public class Player : MonoBehaviour
     /**
      * Push twards a target
      */
-    public void GoToTarget()
+    public void GoToTarget(int index)
     {
-        // Find the next target
-        Transform target = FindTarget();
+        // Find the next floor
+        Floor floor = lastHit.floor.nextFloor;
 
         // Found a target
-        if (target)
+        if (floor)
         {
             // Start move particle
             moveParticle.Play();
@@ -86,7 +111,7 @@ public class Player : MonoBehaviour
             rb.Sleep();
 
             // Face target
-            transform.LookAt(target);
+            transform.LookAt(floor.hits[index].transform);
 
             // Push to target
             rb.AddRelativeForce(0, 0, pushForce);
@@ -95,24 +120,4 @@ public class Player : MonoBehaviour
             canMove = false;
         }
     }
-
-    /**
-     * Find the next target and return its transform
-     */
-    public Transform FindTarget()
-    {
-        // Find a target
-        GameObject target = GameObject.FindGameObjectWithTag(targetTag);
-
-        // Is there a target
-        if (target)
-        {
-            // Return it's transform
-            return target.GetComponent<Transform>();
-        }
-
-        // No target
-        return null;
-    }
 }
-

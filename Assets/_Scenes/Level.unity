@@ -152,10 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1023395495579162, guid: 2195107eeab47d24fb44587d5fbd3016, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114034947396445506, guid: 2195107eeab47d24fb44587d5fbd3016,
         type: 2}
       propertyPath: game
@@ -393,7 +389,7 @@ MonoBehaviour:
   floorPrefab: {fileID: 1529174076788784, guid: 83471dd69c9b5324a837466e2e6a7e35,
     type: 2}
   nextSpawnDistance: 0
-  nextSpawnDistanceFactor: 18
+  nextSpawnDistanceFactor: 17
 --- !u!4 &744091964
 Transform:
   m_ObjectHideFlags: 0

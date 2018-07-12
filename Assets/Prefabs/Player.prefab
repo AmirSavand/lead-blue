@@ -144,11 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac03d19c8f6c08343a0858d1be3cd204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Hit
   pushForce: 4000
   jumpForce: 500
   jumpDuration: 1
   moveParticle: {fileID: 198416360438179182}
+  game: {fileID: 0}
 --- !u!135 &135428141397196242
 SphereCollider:
   m_ObjectHideFlags: 1

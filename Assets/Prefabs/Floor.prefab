@@ -272,7 +272,10 @@ MonoBehaviour:
   age: 10
   moveSpeed: 5
   startFromY: 5
-  hitPrefab: {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  hitPrefabs:
+  - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
+  - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
   hitPlaces:
   - {fileID: 4991235843981236}
   - {fileID: 4032948099460506}
