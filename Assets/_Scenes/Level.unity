@@ -164,6 +164,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2195107eeab47d24fb44587d5fbd3016, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &126878232 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4918485775572188, guid: 2195107eeab47d24fb44587d5fbd3016,
+    type: 2}
+  m_PrefabInternal: {fileID: 111647211}
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +179,7 @@ GameObject:
   - component: {fileID: 282840814}
   - component: {fileID: 282840813}
   - component: {fileID: 282840811}
+  - component: {fileID: 282840812}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -188,6 +194,20 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_Enabled: 1
+--- !u!114 &282840812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282840810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2dd0f9f2514fd4cb48197d0913b439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 126878232}
+  smoothTime: 0.1
+  distance: 10
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -373,6 +393,7 @@ MonoBehaviour:
   floorPrefab: {fileID: 1529174076788784, guid: 83471dd69c9b5324a837466e2e6a7e35,
     type: 2}
   nextSpawnDistance: 0
+  nextSpawnDistanceFactor: 18
 --- !u!4 &744091964
 Transform:
   m_ObjectHideFlags: 0

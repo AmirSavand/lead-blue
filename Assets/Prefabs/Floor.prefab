@@ -269,6 +269,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4c9d606854afa498d710349ac6ea92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  age: 10
+  moveSpeed: 5
+  startFromY: 5
   hitPrefab: {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
   hitPlaces:
   - {fileID: 4991235843981236}
