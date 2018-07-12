@@ -8,10 +8,12 @@ public class Player : MonoBehaviour
     public float jumpDuration;
 
     public ParticleSystem moveParticle;
+    public Game game;
 
-    private bool canMove;
+    private bool canMove = true;
 
     private Rigidbody rb;
+    private Collider lastHit;
 
     void Start()
     {
@@ -31,11 +33,17 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Is it a target
-        if (other.CompareTag(targetTag))
+        // Is it a new hit target
+        if (other.CompareTag(targetTag) && lastHit != other)
         {
+            // Store it so we don't hit it again
+            lastHit = other;
+
             // Destroy it
             Destroy(other.gameObject);
+
+            // Callback
+            game.OnHit();
 
             // Do the jump
             Jump();
