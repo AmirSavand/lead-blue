@@ -126,7 +126,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4918485775572188, guid: 2195107eeab47d24fb44587d5fbd3016, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4918485775572188, guid: 2195107eeab47d24fb44587d5fbd3016, type: 2}
       propertyPath: m_LocalPosition.z
@@ -293,6 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e7c7166ac80ca418f892dc380ed843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
+  time: 30
   floorSpawner: {fileID: 744091963}
 --- !u!1 &706125529
 GameObject:
@@ -389,7 +391,7 @@ MonoBehaviour:
   floorPrefab: {fileID: 1529174076788784, guid: 83471dd69c9b5324a837466e2e6a7e35,
     type: 2}
   nextSpawnDistance: 0
-  nextSpawnDistanceFactor: 17
+  nextSpawnDistanceFactor: 18
 --- !u!4 &744091964
 Transform:
   m_ObjectHideFlags: 0

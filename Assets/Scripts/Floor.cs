@@ -6,8 +6,8 @@ public class Floor : MonoBehaviour
     public float age = 10;
 
     public float moveSpeed = 2;
-    public float startFromY;
-    private Vector3 startPosition;
+    public float moveFromY;
+    private Vector3 moveToPosition;
 
     public List<Hit> hits = new List<Hit>();
     public GameObject[] hitPrefabs;
@@ -18,10 +18,10 @@ public class Floor : MonoBehaviour
     void Start()
     {
         // Store start position
-        startPosition = transform.position;
+        moveToPosition = transform.position;
 
         // Set to start position from Z axis
-        transform.position = startPosition + new Vector3(0, startFromY, 0);
+        transform.position = moveToPosition + new Vector3(0, moveFromY, 0);
 
         // Spawn a random hit in a random hit place
         foreach (Transform hitPlace in hitPlaces)
@@ -42,7 +42,11 @@ public class Floor : MonoBehaviour
 
     void Update()
     {
-        // Smoothly move to position
-        transform.position = Vector3.Lerp(transform.position, startPosition, Time.deltaTime * moveSpeed);
+        // Check if reached
+        if (transform.position.y <= moveToPosition.y)
+        {
+            // Move up to initial position
+            transform.position += new Vector3(0, Time.deltaTime * moveSpeed, 0);
+        }
     }
 }

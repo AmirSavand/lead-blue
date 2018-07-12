@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public ParticleSystem moveParticle;
     public Game game;
 
-    private bool canMove = true;
+    private bool canMove;
 
     private Rigidbody rb;
     private Hit lastHit;
