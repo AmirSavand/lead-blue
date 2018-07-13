@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
     public float time = 60;
 
     public Text textScore;
+    public Text textScoreFinal;
     public Text textTime;
 
     public GameObject uiMenu;
@@ -47,11 +48,14 @@ public class Game : MonoBehaviour
                 // Game over
                 SetGameState(GameState.Over);
 
+                // Destroy player
+                Destroy(player.gameObject);
+
                 // Face camera up
                 cam.faceUp = true;
 
-                // Destroy player
-                Destroy(player.gameObject);
+                // Set final score text
+                textScoreFinal.text = "+" + score;
             }
         }
 
