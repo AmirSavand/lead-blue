@@ -22,6 +22,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // Player update when game running only
+        if (game.gameState != GameState.Run)
+        {
+            return;
+        }
+
         // Can move (is jumping)
         if (canMove)
         {
