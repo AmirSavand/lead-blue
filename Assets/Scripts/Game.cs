@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public enum GameState
 {
@@ -29,38 +30,52 @@ public class Game : MonoBehaviour
     public Player player;
     public FloorSpawner floorSpawner;
 
-    private void Start()
-    {
-        // Setup state UIs
-        UpdateStateUis();
-    }
-
     void Update()
     {
-        // Decrease time
-        time = Mathf.Clamp(time - Time.deltaTime, 0, time);
-
-        // Update time text (UI)
-        textTime.text = Mathf.Round(time).ToString();
-
-        // Ran out of time (when running)
-        if (time == 0 && gameState == GameState.Run)
+        // Game running
+        if (gameState == GameState.Run)
         {
-            // Game over
-            gameState = GameState.Over;
+            // Decrease time
+            time = Mathf.Clamp(time - Time.deltaTime, 0, time);
 
-            // Face camera up
-            cam.faceUp = true;
+            // Update time text (UI)
+            textTime.text = Mathf.Round(time).ToString();
 
-            // Destroy player
-            Destroy(player.gameObject);
+            // Ran out of time
+            if (time == 0)
+            {
+                // Game over
+                SetGameState(GameState.Over);
 
-            // Update UI as well
-            UpdateStateUis();
+                // Face camera up
+                cam.faceUp = true;
+
+                // Destroy player
+                Destroy(player.gameObject);
+            }
+        }
+
+        // Pressed pause/back button
+        if (Input.GetButtonUp("Cancel"))
+        {
+            // Game is runningm pause it
+            if (gameState == GameState.Run)
+            {
+                Pause();
+            }
+
+            // Game is paused, resume it
+            else if (gameState == GameState.Pause)
+            {
+                Resume();
+            }
         }
     }
 
-    public void OnHit(Hit hit)
+    /**
+     * Callback when player hits a hit
+     */
+    public void OnPlayerHit(Hit hit)
     {
         // Spawn another floor
         floorSpawner.Spawn();
@@ -74,10 +89,14 @@ public class Game : MonoBehaviour
     }
 
     /**
-     * Update state of all UIs based on game state
+     * Set game state and update state UIs
      */
-    public void UpdateStateUis()
+    public void SetGameState(GameState state)
     {
+        // Update game state
+        gameState = state;
+
+        // Update game UIs
         uiMenu.SetActive(gameState == GameState.Menu);
         uiRun.SetActive(gameState == GameState.Run);
         uiPause.SetActive(gameState == GameState.Pause);
@@ -85,10 +104,32 @@ public class Game : MonoBehaviour
     }
 
     /**
-     * Restart game (scene)
+     * Go to main menu
      */
-    public void Restart()
+    public void Menu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    /**
+     * Resume game
+     */
+    public void Resume()
+    {
+        // Resume gameplay
+        Time.timeScale = 1;
+
+        SetGameState(GameState.Run);
+    }
+
+    /**
+     * Pause game
+     */
+    public void Pause()
+    {
+        // Stop gameplay
+        Time.timeScale = 0;
+
+        SetGameState(GameState.Pause);
     }
 }

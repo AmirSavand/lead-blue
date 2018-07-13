@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
 
             // Callback
-            game.OnHit(hit);
+            game.OnPlayerHit(hit);
 
             // Do the jump
             Jump();
