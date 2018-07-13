@@ -5,11 +5,11 @@ public class Player : MonoBehaviour
     public float pushForce;
     public float jumpForce;
     public float jumpDuration;
+    public float jumpMoveDelay;
+    public bool canMove;
 
     public ParticleSystem moveParticle;
     public Game game;
-
-    private bool canMove;
 
     private Rigidbody rb;
     private Hit lastHit;
@@ -95,8 +95,8 @@ public class Player : MonoBehaviour
         // Push up
         rb.AddForce(Vector3.up * jumpForce);
 
-        // Can move
-        canMove = true;
+        // Can move after a while
+        Invoke("UpdateMoveStatus", jumpMoveDelay);
     }
 
     /**
@@ -125,5 +125,13 @@ public class Player : MonoBehaviour
             // Can't move
             canMove = false;
         }
+    }
+
+    /**
+     * Update move status (canMove)
+     */
+    public void UpdateMoveStatus()
+    {
+        canMove = true;
     }
 }
