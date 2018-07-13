@@ -584,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   score: 0
-  time: 1
+  time: 30
   textScore: {fileID: 1667741248}
   textTime: {fileID: 1836579116}
   uiMenu: {fileID: 1042344203}
