@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Get other's Hit component
-        Hit hit = other.GetComponent<Hit>();
+        Hit hit = other.GetComponentInParent<Hit>();
 
         // Is it a new hit target
         if (hit != null && lastHit != hit)

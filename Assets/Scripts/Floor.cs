@@ -26,7 +26,7 @@ public class Floor : MonoBehaviour
         // Spawn a random hit in a random hit place
         foreach (Transform hitPlace in hitPlaces)
         {
-            GameObject hitPrefab = hitPrefabs[Random.Range(0, hitPlaces.Length)];
+            GameObject hitPrefab = hitPrefabs[Random.Range(0, hitPrefabs.Length)];
             Hit hit = Instantiate(hitPrefab, hitPlace).GetComponent<Hit>();
 
             // Set it's floor

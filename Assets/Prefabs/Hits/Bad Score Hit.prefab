@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 135053579752556864}
   - component: {fileID: 114057532926873542}
   m_Layer: 0
-  m_Name: Bad Hit
+  m_Name: Bad Score Hit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,9 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a28dbaaf751ab46b20fdc9bcd93db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitName: Score
+  hitName: Bad Score
   score: -5
   time: 0
+  rotateSpeed: 2
   floor: {fileID: 0}
 --- !u!135 &135053579752556864
 SphereCollider:
