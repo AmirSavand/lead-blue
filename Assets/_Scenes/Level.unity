@@ -1302,7 +1302,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-2131998
+  m_Name: pb_Mesh13748
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -2954,7 +2954,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.64446914, b: 0.2688679, a: 1}
+      maxColor: {r: 0.12842648, g: 0.6182832, b: 0.735849, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3016,7 +3016,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3332,7 +3332,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 50
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -7403,9 +7403,11 @@ MonoBehaviour:
   pushForce: 5000
   jumpForce: 600
   jumpDuration: 1
-  jumpMoveDelay: 0.05
+  jumpMoveDelay: 0.1
+  rollSpeed: 1000
   canMove: 0
   moveParticle: {fileID: 1761068422}
+  model: {fileID: 1912470078}
   game: {fileID: 563417571}
 --- !u!54 &1771899350
 Rigidbody:

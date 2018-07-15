@@ -6,9 +6,11 @@ public class Player : MonoBehaviour
     public float jumpForce;
     public float jumpDuration;
     public float jumpMoveDelay;
+    public float rollSpeed;
     public bool canMove;
 
     public ParticleSystem moveParticle;
+    public Transform model;
     public Game game;
 
     private Rigidbody rb;
@@ -56,6 +58,20 @@ public class Player : MonoBehaviour
             {
                 GoToTarget(hitIndex);
             }
+
+            // If there's any velocity
+            if (rb.velocity != Vector3.zero)
+            {
+                // Role the ball (slow)
+                model.Rotate(Time.deltaTime * rollSpeed / 10, 0, 0);
+            }
+        }
+
+        // Going to a hit
+        else if (moveParticle.isPlaying)
+        {
+            // Role it
+            model.Rotate(Time.deltaTime * rollSpeed, 0, 0);
         }
     }
 
