@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public ParticleSystem moveParticle;
     public Transform model;
+    public GameObject deathEffectPrefab;
     public Game game;
 
     private Rigidbody rb;
@@ -149,5 +150,23 @@ public class Player : MonoBehaviour
     public void UpdateMoveStatus()
     {
         canMove = true;
+    }
+
+    /**
+     * Properly destroy and kill with effects
+     */
+    public void Kill()
+    {
+        // Destroy model
+        Destroy(model.gameObject);
+
+        // Destroy player after particle
+        Destroy(gameObject, moveParticle.main.duration);
+
+        // Create death effect
+        GameObject deathEffect = Instantiate(deathEffectPrefab, transform.position, transform.rotation);
+
+        // Destroy death effect after effect
+        Destroy(deathEffect, deathEffect.GetComponent<ParticleSystem>().main.duration);
     }
 }

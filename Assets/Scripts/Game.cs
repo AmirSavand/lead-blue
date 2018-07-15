@@ -27,7 +27,6 @@ public class Game : MonoBehaviour
     public GameObject uiPause;
     public GameObject uiOver;
 
-    public Cam cam;
     public Player player;
     public FloorSpawner floorSpawner;
 
@@ -49,10 +48,7 @@ public class Game : MonoBehaviour
                 SetGameState(GameState.Over);
 
                 // Destroy player
-                Destroy(player.gameObject);
-
-                // Face camera up
-                cam.faceUp = true;
+                player.Kill();
 
                 // Set final score text
                 textScoreFinal.text = "+" + score;
