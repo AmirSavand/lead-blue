@@ -6,7 +6,8 @@ public class Cam : MonoBehaviour
 
     public float smoothTime = 0.1f;
     public float distance = 10f;
-    public float faceUpSpeed = 30;
+    public float faceUp = 30;
+    public float faceUpSpeed = 5;
 
     public Game game;
 
@@ -28,7 +29,7 @@ public class Cam : MonoBehaviour
         else if (game.gameState == GameState.Over)
         {
             // Face up smoothly
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-faceUpSpeed, 0, 0), Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-faceUp, 0, 0), Time.deltaTime * faceUpSpeed);
         }
     }
 }

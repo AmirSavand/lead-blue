@@ -296,8 +296,8 @@ MonoBehaviour:
   target: {fileID: 126878232}
   smoothTime: 0.1
   distance: 10
-  faceUpSpeed: 20
-  faceUp: 0
+  faceUp: 30
+  faceUpSpeed: 0.5
   game: {fileID: 563417571}
 --- !u!20 &282840813
 Camera:
@@ -623,7 +623,6 @@ MonoBehaviour:
   uiRun: {fileID: 1593013739}
   uiPause: {fileID: 321609940}
   uiOver: {fileID: 975046924}
-  cam: {fileID: 282840812}
   player: {fileID: 1771899349}
   floorSpawner: {fileID: 744091963}
 --- !u!4 &575265631
