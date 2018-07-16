@@ -2,24 +2,31 @@
 
 public class Player : MonoBehaviour
 {
+    [Header("Push")]
     public float pushForce;
+    public bool canPush;
+
+    [Header("Jump")]
     public float jumpForce;
     public float jumpDuration;
     public float jumpMoveDelay;
-    public float rollSpeed;
-    public bool canMove;
 
+    [Header("Roll")]
+    public float rollSpeed;
+
+    [Header("Ref")]
     public ParticleSystem moveParticle;
     public Transform model;
     public GameObject deathEffectPrefab;
-    public Game game;
 
+    private Game game;
     private Rigidbody rb;
     private Hit lastHit;
 
     void Start()
     {
         // Init vars
+        game = Game.Get();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -32,7 +39,7 @@ public class Player : MonoBehaviour
         }
 
         // Can move (is jumping)
-        if (canMove)
+        if (canPush)
         {
             int hitIndex = -1;
 
@@ -140,7 +147,7 @@ public class Player : MonoBehaviour
             rb.AddRelativeForce(0, 0, pushForce);
 
             // Can't move
-            canMove = false;
+            canPush = false;
         }
     }
 
@@ -149,7 +156,7 @@ public class Player : MonoBehaviour
      */
     public void UpdateMoveStatus()
     {
-        canMove = true;
+        canPush = true;
     }
 
     /**

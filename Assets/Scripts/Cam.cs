@@ -9,9 +9,14 @@ public class Cam : MonoBehaviour
     public float faceUp = 30;
     public float faceUpSpeed = 5;
 
-    public Game game;
-
+    private Game game;
     private Vector3 velocity = Vector3.zero;
+
+    void Start()
+    {
+        // Init vars
+        game = Game.Get();
+    }
 
     void FixedUpdate()
     {

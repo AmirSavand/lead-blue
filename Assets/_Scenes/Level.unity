@@ -298,7 +298,6 @@ MonoBehaviour:
   distance: 10
   faceUp: 30
   faceUpSpeed: 0.5
-  game: {fileID: 563417571}
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -615,7 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   score: 0
-  time: 1
+  time: 30
   textScore: {fileID: 1667741248}
   textScoreFinal: {fileID: 2056769653}
   textTime: {fileID: 1836579116}
@@ -1259,7 +1258,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh23580
+  m_Name: pb_Mesh13798
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1565,15 +1564,12 @@ MonoBehaviour:
   moveSpeed: 10
   moveFromY: -5
   hits: []
-  hitPrefabs:
-  - {fileID: 1322251643078854, guid: 653d4626c2598384884d9a336d253df8, type: 2}
-  - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
-  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
-  - {fileID: 1322251643078854, guid: 539ffb209c548824ea937565c5fca19f, type: 2}
   hitPlaces:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  badHitPrefabs: []
+  goodHitPrefabs: []
   nextFloor: {fileID: 0}
 --- !u!54 &1190665652
 Rigidbody:
@@ -2383,15 +2379,12 @@ MonoBehaviour:
   moveSpeed: 10
   moveFromY: -5
   hits: []
-  hitPrefabs:
-  - {fileID: 1322251643078854, guid: 653d4626c2598384884d9a336d253df8, type: 2}
-  - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
-  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
-  - {fileID: 1322251643078854, guid: 539ffb209c548824ea937565c5fca19f, type: 2}
   hitPlaces:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  badHitPrefabs: []
+  goodHitPrefabs: []
   nextFloor: {fileID: 0}
 --- !u!54 &1641495676
 Rigidbody:
@@ -7307,7 +7300,6 @@ MonoBehaviour:
   model: {fileID: 1912470078}
   deathEffectPrefab: {fileID: 1022168451527142, guid: 3b3ed5ba6c600f64d99526cb016eb811,
     type: 2}
-  game: {fileID: 563417571}
 --- !u!54 &1771899350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7406,15 +7398,12 @@ MonoBehaviour:
   moveSpeed: 10
   moveFromY: -5
   hits: []
-  hitPrefabs:
-  - {fileID: 1322251643078854, guid: 653d4626c2598384884d9a336d253df8, type: 2}
-  - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
-  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
-  - {fileID: 1322251643078854, guid: 539ffb209c548824ea937565c5fca19f, type: 2}
   hitPlaces:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  badHitPrefabs: []
+  goodHitPrefabs: []
   nextFloor: {fileID: 0}
 --- !u!54 &1833286546
 Rigidbody:

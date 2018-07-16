@@ -13,20 +13,23 @@ public enum GameState
 
 public class Game : MonoBehaviour
 {
+    [Header("Game")]
     public GameState gameState = GameState.Menu;
-
     public int score = 0;
     public float time = 60;
 
+    [Header("UI Texts")]
     public Text textScore;
     public Text textScoreFinal;
     public Text textTime;
 
+    [Header("UIs")]
     public GameObject uiMenu;
     public GameObject uiRun;
     public GameObject uiPause;
     public GameObject uiOver;
 
+    [Header("Ref")]
     public Player player;
     public FloorSpawner floorSpawner;
 
@@ -70,6 +73,14 @@ public class Game : MonoBehaviour
                 Resume();
             }
         }
+    }
+
+    /**
+     * Find the Game instance and return it
+     */
+    public static Game Get()
+    {
+        return GameObject.FindGameObjectWithTag("Game").GetComponent<Game>();
     }
 
     /**

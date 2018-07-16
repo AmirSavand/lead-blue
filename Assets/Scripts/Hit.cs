@@ -10,8 +10,9 @@ public class Hit : MonoBehaviour
 
     public Floor floor;
 
-    private void Update()
+    void Update()
     {
+        // Rotate
         transform.Rotate(0, Time.deltaTime * rotateSpeed, 0);
     }
 }

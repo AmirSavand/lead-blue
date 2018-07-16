@@ -17,6 +17,9 @@ public class FloorSpawner : MonoBehaviour
         Spawn();
     }
 
+    /**
+     * Spawn a floor
+     */
     public void Spawn()
     {
         // Spawn the floor

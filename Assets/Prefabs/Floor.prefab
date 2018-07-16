@@ -273,13 +273,22 @@ MonoBehaviour:
   moveSpeed: 10
   moveFromY: -5
   hits: []
-  hitPrefabs:
-  - {fileID: 1322251643078854, guid: 653d4626c2598384884d9a336d253df8, type: 2}
-  - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
-  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
-  - {fileID: 1322251643078854, guid: 539ffb209c548824ea937565c5fca19f, type: 2}
   hitPlaces:
   - {fileID: 4991235843981236}
   - {fileID: 4032948099460506}
   - {fileID: 4251689091351514}
+  badHitPrefabs:
+  - {fileID: 1322251643078854, guid: 653d4626c2598384884d9a336d253df8, type: 2}
+  - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
+  goodHitPrefabs:
+  - {fileID: 1322251643078854, guid: 539ffb209c548824ea937565c5fca19f, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
   nextFloor: {fileID: 0}
