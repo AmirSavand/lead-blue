@@ -98,6 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitName: Empty
   score: 0
+  time: 0
+  rotateSpeed: 0
+  floor: {fileID: 0}
 --- !u!135 &135053579752556864
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -7291,11 +7291,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 5000
+  canPush: 0
   jumpForce: 600
   jumpDuration: 1
   jumpMoveDelay: 0.1
   rollSpeed: 1000
-  canMove: 0
   moveParticle: {fileID: 1761068422}
   model: {fileID: 1912470078}
   deathEffectPrefab: {fileID: 1022168451527142, guid: 3b3ed5ba6c600f64d99526cb016eb811,

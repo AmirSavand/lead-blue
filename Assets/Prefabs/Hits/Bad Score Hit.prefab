@@ -99,7 +99,7 @@ MonoBehaviour:
   hitName: Bad Score
   score: -5
   time: 0
-  rotateSpeed: 2
+  rotateSpeed: 0
   floor: {fileID: 0}
 --- !u!135 &135053579752556864
 SphereCollider:

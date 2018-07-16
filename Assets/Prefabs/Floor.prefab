@@ -280,6 +280,7 @@ MonoBehaviour:
   badHitPrefabs:
   - {fileID: 1322251643078854, guid: 653d4626c2598384884d9a336d253df8, type: 2}
   - {fileID: 1322251643078854, guid: 0a33c4da9cf31f14e81948a5b3d28163, type: 2}
+  - {fileID: 1322251643078854, guid: ef9b7e75f31368c4a9f721f8ed4da61b, type: 2}
   goodHitPrefabs:
   - {fileID: 1322251643078854, guid: 539ffb209c548824ea937565c5fca19f, type: 2}
   - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
