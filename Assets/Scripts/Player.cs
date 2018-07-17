@@ -4,11 +4,11 @@ public class Player : MonoBehaviour
 {
     [Header("Push")]
     public float pushForce;
+    public float pushFaceUp;
     public bool canPush;
 
     [Header("Jump")]
     public float jumpForce;
-    public float jumpDuration;
     public float jumpMoveDelay;
 
     [Header("Roll")]
@@ -94,8 +94,8 @@ public class Player : MonoBehaviour
             // Store it so we don't hit it again
             lastHit = hit;
 
-            // Destroy it
-            Destroy(other.gameObject);
+            // Kill the hit
+            hit.Kill();
 
             // Callback
             game.OnPlayerHit(hit);
@@ -131,23 +131,31 @@ public class Player : MonoBehaviour
         // Find the next floor
         Floor floor = lastHit.floor.nextFloor;
 
-        // Found a target
+        // Found the next floor
         if (floor)
         {
-            // Start move particle
-            moveParticle.Play();
+            // Find the hit of the floor
+            Hit hit = floor.hits[index];
 
-            // Reset velocity
-            rb.Sleep();
+            // Found the hit
+            if (hit)
+            {
+                // Start move particle
+                moveParticle.Play();
 
-            // Face target
-            transform.LookAt(floor.hits[index].transform);
+                // Reset velocity
+                rb.Sleep();
 
-            // Push to target
-            rb.AddRelativeForce(0, 0, pushForce);
+                // Face hit
+                transform.LookAt(hit.transform);
+                transform.Rotate(pushFaceUp, 0, 0);
 
-            // Can't move
-            canPush = false;
+                // Push to hit
+                rb.AddRelativeForce(0, 0, pushForce);
+
+                // Can't move
+                canPush = false;
+            }
         }
     }
 

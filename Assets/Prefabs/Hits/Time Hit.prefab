@@ -7937,6 +7937,7 @@ MonoBehaviour:
   score: 0
   time: 5
   rotateSpeed: 150
+  destroyOnKill: 1
   floor: {fileID: 0}
 --- !u!114 &114125026394555862
 MonoBehaviour:

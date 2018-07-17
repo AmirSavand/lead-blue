@@ -7,6 +7,7 @@ public class Hit : MonoBehaviour
     public float time;
 
     public float rotateSpeed;
+    public bool destroyOnKill;
 
     public Floor floor;
 
@@ -14,5 +15,16 @@ public class Hit : MonoBehaviour
     {
         // Rotate
         transform.Rotate(0, Time.deltaTime * rotateSpeed, 0);
+    }
+
+    /**
+     * Propper destroy
+     */
+    public void Kill()
+    {
+        if (destroyOnKill)
+        {
+            Destroy(gameObject);
+        }
     }
 }
