@@ -17,13 +17,14 @@ public class Game : MonoBehaviour
     public GameState gameState = GameState.Menu;
     public int score = 0;
     public float time = 60;
+    private float initialTime;
 
-    [Header("UI Texts")]
-    public Text textScore;
-    public Text textScoreFinal;
-    public Text textTime;
+    [Header("Game UIs")]
+    public Text scoreText;
+    public Text finalScoreText;
+    public Slider timeSlider;
 
-    [Header("UIs")]
+    [Header("State UIs")]
     public GameObject uiMenu;
     public GameObject uiRun;
     public GameObject uiPause;
@@ -32,6 +33,12 @@ public class Game : MonoBehaviour
     [Header("Ref")]
     public Player player;
     public FloorSpawner floorSpawner;
+
+    private void Start()
+    {
+        // Store initial time
+        initialTime = time;
+    }
 
     void Update()
     {
@@ -42,7 +49,7 @@ public class Game : MonoBehaviour
             time = Mathf.Clamp(time - Time.deltaTime, 0, time);
 
             // Update time text (UI)
-            textTime.text = Mathf.Round(time).ToString();
+            timeSlider.value = time / initialTime;
 
             // Ran out of time
             if (time == 0)
@@ -54,7 +61,7 @@ public class Game : MonoBehaviour
                 player.Kill();
 
                 // Set final score text
-                textScoreFinal.text = "+" + score;
+                finalScoreText.text = "+" + score;
             }
         }
 
@@ -96,7 +103,7 @@ public class Game : MonoBehaviour
         time = Mathf.Clamp(time + hit.time, 0, time + hit.time);
 
         // Update score text (UI)
-        textScore.text = score.ToString();
+        scoreText.text = score.ToString();
     }
 
     /**
