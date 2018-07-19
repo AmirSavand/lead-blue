@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
         }
 
         // Going to a hit
-        else if (moveParticle.isPlaying)
+        else if (moveParticle.isPlaying && model != null)
         {
             // Role it
             model.Rotate(Time.deltaTime * rollSpeed, 0, 0);

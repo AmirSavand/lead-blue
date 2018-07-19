@@ -2,10 +2,6 @@
 
 public class Floor : MonoBehaviour
 {
-    [Header("Life")]
-    public float age = 10;
-    private float lifeTime = 0;
-
     [Header("Initial Move")]
     public float moveSpeed = 2;
     public float moveFromY;
@@ -20,13 +16,8 @@ public class Floor : MonoBehaviour
     [Header("Ref")]
     public Floor nextFloor;
 
-    private Game game;
-
     void Start()
     {
-        // Init vars
-        game = Game.Get();
-
         // Store start position
         moveToPosition = transform.position;
 
@@ -53,19 +44,6 @@ public class Floor : MonoBehaviour
 
     void Update()
     {
-        // Kill if reached age
-        if (lifeTime >= age)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        // Increase age (if game is running)
-        if (game.gameState == GameState.Run)
-        {
-            lifeTime += Time.deltaTime;
-        }
-
         // Check if reached
         if (transform.position.y <= moveToPosition.y)
         {

@@ -51,14 +51,17 @@ public class Game : MonoBehaviour
             // Update time text (UI)
             timeSlider.value = time / initialTime;
 
-            // Ran out of time
-            if (time == 0)
+            // Ran out of time or player is dead
+            if (time == 0 || player == null)
             {
                 // Game over
                 SetGameState(GameState.Over);
 
                 // Destroy player
-                player.Kill();
+                if (player)
+                {
+                    player.Kill();
+                }
 
                 // Set final score text
                 finalScoreText.text = "+" + score;
