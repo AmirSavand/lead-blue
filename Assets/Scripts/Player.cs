@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     private Game game;
     private Rigidbody rb;
+    private Floor currentFloor;
     private Hit lastHit;
 
     void Start()
@@ -28,6 +29,9 @@ public class Player : MonoBehaviour
         // Init vars
         game = Game.Get();
         rb = GetComponent<Rigidbody>();
+
+        // Find first floor to start
+        currentFloor = GameObject.Find("Floor 0").GetComponent<Floor>();
     }
 
     void Update()
@@ -94,6 +98,9 @@ public class Player : MonoBehaviour
             // Store it so we don't hit it again
             lastHit = hit;
 
+            // Store the floor of this hit
+            currentFloor = hit.floor;
+
             // Kill the hit
             hit.Kill();
 
@@ -128,34 +135,30 @@ public class Player : MonoBehaviour
      */
     public void GoToTarget(int index)
     {
-        // Find the next floor
-        Floor floor = lastHit.floor.nextFloor;
+        // Find the hit of the floor
+        Hit hit = currentFloor.nextFloor.hits[index];
 
-        // Found the next floor
-        if (floor)
+        // Found the hit
+        if (hit)
         {
-            // Find the hit of the floor
-            Hit hit = floor.hits[index];
+            // Start move particle
+            moveParticle.Play();
 
-            // Found the hit
-            if (hit)
-            {
-                // Start move particle
-                moveParticle.Play();
+            // Reset velocity
+            rb.Sleep();
 
-                // Reset velocity
-                rb.Sleep();
+            // Face hit but upper a bit
+            transform.LookAt(hit.transform);
+            transform.Rotate(pushFaceUp, 0, 0);
 
-                // Face hit
-                transform.LookAt(hit.transform);
-                transform.Rotate(pushFaceUp, 0, 0);
+            // Push to hit
+            rb.AddRelativeForce(0, 0, pushForce);
 
-                // Push to hit
-                rb.AddRelativeForce(0, 0, pushForce);
+            // Can't move
+            canPush = false;
 
-                // Can't move
-                canPush = false;
-            }
+            // Store the floor
+            currentFloor = currentFloor.nextFloor;
         }
     }
 

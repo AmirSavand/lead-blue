@@ -33,11 +33,24 @@ public class Game : MonoBehaviour
     [Header("Ref")]
     public Player player;
     public FloorSpawner floorSpawner;
+    public GameObject[] editorOnlyGameObjects;
 
-    private void Start()
+    void Awake()
+    {
+        // Destroy all editor only game objects
+        foreach (GameObject editorOnlyGameObject in editorOnlyGameObjects)
+        {
+            Destroy(editorOnlyGameObject);
+        }
+    }
+
+    void Start()
     {
         // Store initial time
         initialTime = time;
+
+        // Reset time
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -140,6 +153,7 @@ public class Game : MonoBehaviour
         // Resume gameplay
         Time.timeScale = 1;
 
+        // Update game state
         SetGameState(GameState.Run);
     }
 
@@ -151,6 +165,7 @@ public class Game : MonoBehaviour
         // Stop gameplay
         Time.timeScale = 0;
 
+        // Update game state
         SetGameState(GameState.Pause);
     }
 }

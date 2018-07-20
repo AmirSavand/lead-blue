@@ -8,6 +8,7 @@ public class Floor : MonoBehaviour
     private Vector3 moveToPosition;
 
     [Header("Spawn Hit")]
+    public bool spawnHits;
     public Hit[] hits;
     public Transform[] hitPlaces;
     public GameObject[] badHitPrefabs;
@@ -57,13 +58,17 @@ public class Floor : MonoBehaviour
      */
     void SpawnHit(GameObject hitPrefab, Transform hitPlace)
     {
-        // Instantiate
-        Hit hit = Instantiate(hitPrefab, hitPlace).GetComponent<Hit>();
+        // Can spawn hits
+        if (spawnHits)
+        {
+            // Instantiate
+            Hit hit = Instantiate(hitPrefab, hitPlace).GetComponent<Hit>();
 
-        // Set it's floor
-        hit.floor = this;
+            // Set it's floor
+            hit.floor = this;
 
-        // Store it in hits
-        hits.SetValue(hit, System.Array.IndexOf(hitPlaces, hitPlace));
+            // Store it in hits
+            hits.SetValue(hit, System.Array.IndexOf(hitPlaces, hitPlace));
+        }
     }
 }

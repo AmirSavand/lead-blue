@@ -4,17 +4,21 @@ public class FloorSpawner : MonoBehaviour
 {
     public GameObject floorPrefab;
 
+    public int initialSpawn = 3;
+
     public float nextSpawnDistance;
     public float nextSpawnDistanceFactor = 18;
 
+    private int floorCounter;
     private Floor lastFloor;
 
     void Start()
     {
-        // Spawn 3 floors right away
-        Spawn();
-        Spawn();
-        Spawn();
+        // Initial spawn
+        for (int i = 0; i < initialSpawn; i++)
+        {
+            Spawn();
+        }
     }
 
     /**
@@ -31,13 +35,27 @@ public class FloorSpawner : MonoBehaviour
         // Increase the distance for next spawn
         nextSpawnDistance += nextSpawnDistanceFactor;
 
-        // Set this floor as next floor to last floor
+        // Set name of floor with ID
+        floor.transform.name = "Floor " + floorCounter;
+
+        // This is not the first floor
         if (lastFloor)
         {
+            // Store it as last floor
             lastFloor.nextFloor = floor;
+        }
+
+        // This is the first floor
+        else
+        {
+            // No hit spawning for first floor
+            floor.spawnHits = false;
         }
 
         // Store this floor as last floor
         lastFloor = floor;
+
+        // Increase floor counter
+        floorCounter++;
     }
 }

@@ -20,8 +20,8 @@ public class Cam : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Follow if game is running
-        if (game.gameState == GameState.Run)
+        // Follow if there's a target and game is running
+        if (target != null && game.gameState == GameState.Run)
         {
             // Position to smoothly move to (only on Z axis)
             Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, target.position.z - distance);
