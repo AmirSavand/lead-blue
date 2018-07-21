@@ -11,9 +11,22 @@ public class Hit : MonoBehaviour
 
     public bool killCollector;
 
+    public float activateRigidbodiesAfterTime;
+    public Rigidbody[] rigidbodiesToActivate;
+
     public Floor floor;
 
     private bool hitPlayer;
+
+    void Start()
+    {
+        // If should activate rbs after a while
+        if (activateRigidbodiesAfterTime > 0)
+        {
+            // Invoke activation
+            Invoke("ActivateRigidbodies", activateRigidbodiesAfterTime);
+        }
+    }
 
     void Update()
     {
@@ -56,6 +69,14 @@ public class Hit : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    public void ActivateRigidbodies()
+    {
+        foreach (Rigidbody rb in rigidbodiesToActivate)
+        {
+            rb.isKinematic = false;
         }
     }
 }
