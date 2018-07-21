@@ -4,5 +4,8 @@ Lead the fireball to the path of survival.
 
 ## Todo
 
-- [ ] Laser beams as hits.
-- [ ] Camera rotation to sides by player movement.
+- [ ] Rename project.
+- [x] New hit: Laser.
+- [ ] New hit: Pounder.
+- [ ] Camera side movement.
+- [ ] Handle player-hit trigger within Hit component.
