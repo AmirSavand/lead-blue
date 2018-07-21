@@ -2,6 +2,9 @@
 
 public class Player : MonoBehaviour
 {
+    [Header("Player")]
+    public bool isDead;
+
     [Header("Push")]
     public float pushForce;
     public float pushFaceUp;
@@ -22,8 +25,6 @@ public class Player : MonoBehaviour
     private Game game;
     private Rigidbody rb;
     private Floor currentFloor;
-    private Hit lastHit;
-    private bool isDead;
 
     void Start()
     {
@@ -88,42 +89,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    /**
+     * Called when player hits a hit
+     */
+    public void OnHit(Hit hit)
     {
-        // No trigger for dead player
-        if (isDead)
-        {
-            return;
-        }
+        // Store the floor
+        currentFloor = hit.floor;
 
-        // Get other's Hit component
-        Hit hit = other.GetComponentInParent<Hit>();
+        // Game callback
+        game.OnPlayerHit(hit);
 
-        // Is it a new hit target
-        if (hit != null && lastHit != hit)
-        {
-            // Die if hit is a killer
-            if (hit.killCollector)
-            {
-                Kill();
-                return;
-            }
-
-            // Store it so we don't hit it again
-            lastHit = hit;
-
-            // Store the floor of this hit
-            currentFloor = hit.floor;
-
-            // Kill the hit
-            hit.Kill();
-
-            // Callback
-            game.OnPlayerHit(hit);
-
-            // Do the jump
-            Jump();
-        }
+        // Jump up
+        Jump();
     }
 
     /**

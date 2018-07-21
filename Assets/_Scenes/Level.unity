@@ -7257,6 +7257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac03d19c8f6c08343a0858d1be3cd204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
   pushForce: 3000
   pushFaceUp: -5
   canPush: 1

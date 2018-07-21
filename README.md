@@ -8,4 +8,4 @@ Lead the fireball to the path of survival.
 - [x] New hit: Laser.
 - [x] New hit: Pounder.
 - [ ] Camera side movement.
-- [ ] Handle player-hit trigger within Hit component.
+- [x] Handle player-hit trigger within Hit component.
