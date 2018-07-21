@@ -9,3 +9,4 @@ Lead the fireball to the path of survival.
 - [x] New hit: Pounder.
 - [ ] Camera side movement.
 - [x] Handle player-hit trigger within Hit component.
+- [ ] Turn player into pieces after when killed.
