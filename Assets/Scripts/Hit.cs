@@ -9,6 +9,8 @@ public class Hit : MonoBehaviour
     public float rotateSpeed;
     public bool destroyOnKill;
 
+    public bool killCollector;
+
     public Floor floor;
 
     void Update()

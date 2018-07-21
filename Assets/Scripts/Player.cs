@@ -95,6 +95,13 @@ public class Player : MonoBehaviour
         // Is it a new hit target
         if (hit != null && lastHit != hit)
         {
+            // Die if hit is a killer
+            if (hit.killCollector)
+            {
+                Kill();
+                return;
+            }
+
             // Store it so we don't hit it again
             lastHit = hit;
 
@@ -175,6 +182,9 @@ public class Player : MonoBehaviour
      */
     public void Kill()
     {
+        // Destroy rigidbody
+        Destroy(rb);
+
         // Destroy model
         Destroy(model.gameObject);
 
