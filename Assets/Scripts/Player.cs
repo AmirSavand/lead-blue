@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private Floor currentFloor;
     private Hit lastHit;
+    private bool isDead;
 
     void Start()
     {
@@ -36,8 +37,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Player update when game running only
-        if (game.gameState != GameState.Run)
+        // No update for dead player
+        if (isDead)
         {
             return;
         }
@@ -89,6 +90,12 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // No trigger for dead player
+        if (isDead)
+        {
+            return;
+        }
+
         // Get other's Hit component
         Hit hit = other.GetComponentInParent<Hit>();
 
@@ -182,6 +189,9 @@ public class Player : MonoBehaviour
      */
     public void Kill()
     {
+        // Set to dead
+        isDead = true;
+
         // Destroy rigidbody
         Destroy(rb);
 

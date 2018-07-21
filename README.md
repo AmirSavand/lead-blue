@@ -6,6 +6,6 @@ Lead the fireball to the path of survival.
 
 - [ ] Rename project.
 - [x] New hit: Laser.
-- [ ] New hit: Pounder.
+- [x] New hit: Pounder.
 - [ ] Camera side movement.
 - [ ] Handle player-hit trigger within Hit component.

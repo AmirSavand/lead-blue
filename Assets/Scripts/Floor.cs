@@ -13,6 +13,7 @@ public class Floor : MonoBehaviour
     public Transform[] hitPlaces;
     public GameObject[] badHitPrefabs;
     public GameObject[] goodHitPrefabs;
+    public GameObject[] obstaclePrefabs;
 
     [Header("Ref")]
     public Floor nextFloor;
@@ -31,6 +32,13 @@ public class Floor : MonoBehaviour
         // Spawn a random good hit in a random hit place
         Transform goodHitPlace = hitPlaces[Random.Range(0, hitPlaces.Length)];
         SpawnHit(goodHitPrefabs[Random.Range(0, goodHitPrefabs.Length)], goodHitPlace);
+
+        // Randomly spawn a random obstacle in the good hit place
+        if (Random.value < 0.1f)
+        {
+            // Spawn a random obstacle
+            Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)], goodHitPlace);
+        }
 
         // Spawn a random bad hit in a random hit place
         foreach (Transform hitPlace in hitPlaces)
