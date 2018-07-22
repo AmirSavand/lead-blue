@@ -131,6 +131,9 @@ public class Player : MonoBehaviour
         // Found the hit
         if (hit)
         {
+            // Callback
+            game.OnPlayerMove(index);
+
             // Start move particle
             moveParticle.Play();
 

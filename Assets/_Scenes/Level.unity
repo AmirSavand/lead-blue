@@ -345,6 +345,11 @@ MonoBehaviour:
   distance: 10
   faceUp: 30
   faceUpSpeed: 0.5
+  sideRotation: 6
+  sideMovement: 3
+  sideRotationSpeed: 3
+  sideMovementSpeed: 4
+  sideLookFactor: 0
 --- !u!20 &282840813
 Camera:
   m_ObjectHideFlags: 0
@@ -581,6 +586,7 @@ MonoBehaviour:
   uiRun: {fileID: 1593013739}
   uiPause: {fileID: 321609940}
   uiOver: {fileID: 975046924}
+  cam: {fileID: 282840812}
   player: {fileID: 1771899349}
   floorSpawner: {fileID: 744091963}
   editorOnlyGameObjects:
@@ -992,7 +998,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 1027564108}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1433,7 +1439,7 @@ BoxCollider:
   m_GameObject: {fileID: 1406419078}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 60, y: 50, z: 110}
   m_Center: {x: 0, y: 0, z: 35}

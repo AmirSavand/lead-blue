@@ -2,12 +2,21 @@
 
 public class Cam : MonoBehaviour
 {
+    [Header("Target Movement")]
     public Transform target;
-
     public float smoothTime = 0.1f;
     public float distance = 10f;
+
+    [Header("Face Movement")]
     public float faceUp = 30;
     public float faceUpSpeed = 5;
+
+    [Header("Side Look")]
+    public float sideRotation = 3;
+    public float sideMovement = 3;
+    public float sideRotationSpeed = 1;
+    public float sideMovementSpeed = 1;
+    public float sideLookFactor;
 
     private Game game;
     private Vector3 velocity = Vector3.zero;
@@ -20,21 +29,32 @@ public class Cam : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Follow if there's a target and game is running
-        if (target != null && game.gameState == GameState.Run)
+        // There's a target
+        if (target)
         {
-            // Position to smoothly move to (only on Z axis)
-            Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, target.position.z - distance);
+            // Game is running
+            if (game.gameState == GameState.Run)
+            {
+                // Handle target movement (follow on x axis only)
+                Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, target.position.z - distance);
+                transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
+            }
 
-            // Smoothly move the camera
-            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
-        }
+            // Game is over
+            else if (game.gameState == GameState.Over)
+            {
+                // Face up smoothly
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-faceUp, 0, 0), Time.deltaTime * faceUpSpeed);
+            }
 
-        // Face up if game is over
-        else if (game.gameState == GameState.Over)
-        {
-            // Face up smoothly
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-faceUp, 0, 0), Time.deltaTime * faceUpSpeed);
+            // Handle side movement (on x axis only)
+            Vector3 toPosition = transform.position;
+            toPosition.x = sideMovement * sideLookFactor * -1;
+            transform.position = Vector3.Slerp(transform.position, toPosition, Time.deltaTime * sideMovementSpeed);
+
+            // Handle side rotation (on y axis only)
+            Quaternion toRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, sideRotation * sideLookFactor, transform.rotation.eulerAngles.z);
+            transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * sideMovementSpeed);
         }
     }
 }

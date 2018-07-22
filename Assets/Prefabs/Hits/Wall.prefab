@@ -1451,7 +1451,7 @@ MonoBehaviour:
   rotateSpeed: 0
   destroyOnKill: 0
   killCollector: 0
-  activateRigidbodiesAfterTime: 1
+  activateRigidbodiesAfterTime: 1.5
   rigidbodiesToActivate:
   - {fileID: 54899955712626044}
   - {fileID: 54121795347250634}

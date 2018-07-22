@@ -30,6 +30,7 @@ public class Game : MonoBehaviour
     public GameObject uiOver;
 
     [Header("Ref")]
+    public Cam cam;
     public Player player;
     public FloorSpawner floorSpawner;
     public GameObject[] editorOnlyGameObjects;
@@ -119,6 +120,29 @@ public class Game : MonoBehaviour
 
         // Update score text (UI)
         scoreText.text = score.ToString();
+    }
+
+    /**
+     * Callback when player moves
+     */
+    public void OnPlayerMove(int index)
+    {
+        // Set the camer side movement factor based on player move index
+        // Moving right
+        if (index == 0)
+        {
+            cam.sideLookFactor = -1;
+        }
+        // Moving to middle
+        else if (index == 1)
+        {
+            cam.sideLookFactor = 0;
+        }
+        // Moving to left
+        else if (index == 2)
+        {
+            cam.sideLookFactor = 1;
+        }
     }
 
     /**
