@@ -1851,8 +1851,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1406419079}
-  - component: {fileID: 1406419080}
   - component: {fileID: 1406419081}
+  - component: {fileID: 1406419080}
   m_Layer: 0
   m_Name: Edge
   m_TagString: Untagged
@@ -1894,7 +1894,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 50, z: 110}
+  m_Size: {x: 60, y: 50, z: 110}
   m_Center: {x: 0, y: 0, z: 35}
 --- !u!1 &1511200853
 GameObject:
