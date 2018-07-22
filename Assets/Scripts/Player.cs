@@ -40,9 +40,7 @@ public class Player : MonoBehaviour
     {
         // No update for dead player or not running game
         if (isDead || game.gameState != GameState.Run)
-        {
             return;
-        }
 
         // Can move (is jumping)
         if (canPush)

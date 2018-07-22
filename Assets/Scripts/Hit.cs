@@ -40,7 +40,8 @@ public class Hit : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Already hit player
-        if (hitPlayer) return;
+        if (hitPlayer)
+            return;
 
         // Get player
         Player player = other.GetComponentInParent<Player>();
