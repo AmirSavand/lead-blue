@@ -38,8 +38,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // No update for dead player
-        if (isDead)
+        // No update for dead player or not running game
+        if (isDead || game.gameState != GameState.Run)
         {
             return;
         }
