@@ -50,6 +50,9 @@ public class FloorSpawner : MonoBehaviour
         {
             // No hit spawning for first floor
             floor.spawnHits = false;
+
+            // No obstacle spawning for the first floor
+            floor.spawnObstacles = false;
         }
 
         // Store this floor as last floor

@@ -292,6 +292,7 @@ MonoBehaviour:
   - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
   - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
   - {fileID: 1322251643078854, guid: 30ba9a49e90ec6a4ca629c343db07c24, type: 2}
+  spawnObstacles: 1
   obstaclePrefabs:
   - {fileID: 1583920022263544, guid: 68bb526ac2ec089479c549efa0198c9b, type: 2}
   nextFloor: {fileID: 0}
