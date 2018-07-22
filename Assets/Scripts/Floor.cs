@@ -36,6 +36,8 @@ public class Floor : MonoBehaviour
         Transform goodHitPlace = hitPlaces[Random.Range(0, hitPlaces.Length)];
         SpawnHit(goodHitPrefabs[Random.Range(0, goodHitPrefabs.Length)], goodHitPlace);
 
+        // Randomly spawn a random obstacle in the good hit place (if should spawn)
+        if (spawnObstacles && Random.value < 0.1f)
         {
             // Spawn a random obstacle
             Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)], goodHitPlace);
@@ -46,8 +48,6 @@ public class Floor : MonoBehaviour
         {
             // Spawn bad hit if a good hit is not in the place
             if (hitPlace != goodHitPlace)
-            // Randomly spawn a random obstacle in the good hit place (if should spawn)
-            if (spawnObstacles && Random.value < 0.1f)
             {
                 SpawnHit(badHitPrefabs[Random.Range(0, badHitPrefabs.Length)], hitPlace);
             }
