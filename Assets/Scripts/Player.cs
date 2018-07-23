@@ -181,9 +181,6 @@ public class Player : MonoBehaviour
         Destroy(gameObject, moveParticle.main.duration);
 
         // Create death effect
-        GameObject deathEffect = Instantiate(deathEffectPrefab, transform.position, transform.rotation);
-
-        // Destroy death effect after effect
-        Destroy(deathEffect, deathEffect.GetComponent<ParticleSystem>().main.duration);
+        Instantiate(deathEffectPrefab, transform.position, transform.rotation);
     }
 }
