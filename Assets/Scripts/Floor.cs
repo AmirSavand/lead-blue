@@ -15,6 +15,7 @@ public class Floor : MonoBehaviour
     public GameObject[] goodHitPrefabs;
 
     [Header("Spawn Obstacle")]
+    public float spawnObstaclesChance = 0.1f;
     public bool spawnObstacles;
     public GameObject[] obstaclePrefabs;
 
@@ -37,7 +38,7 @@ public class Floor : MonoBehaviour
         SpawnHit(goodHitPrefabs[Random.Range(0, goodHitPrefabs.Length)], goodHitPlace);
 
         // Randomly spawn a random obstacle in the good hit place (if should spawn)
-        if (spawnObstacles && Random.value < 0.1f)
+        if (spawnObstacles && Random.value < spawnObstaclesChance)
         {
             // Spawn a random obstacle
             Instantiate(obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)], goodHitPlace);
