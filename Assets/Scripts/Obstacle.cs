@@ -2,13 +2,19 @@
 
 public class Obstacle : MonoBehaviour
 {
+    public bool killer;
+
     void OnTriggerEnter(Collider other)
     {
-        Player player = other.GetComponentInParent<Player>();
-
-        if (player)
+        if (killer)
         {
-            player.Kill();
+
+            Player player = other.GetComponentInParent<Player>();
+
+            if (player)
+            {
+                player.Kill();
+            }
         }
     }
 }
