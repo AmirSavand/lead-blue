@@ -8,7 +8,6 @@ public class Obstacle : MonoBehaviour
     {
         if (killer)
         {
-
             Player player = other.GetComponentInParent<Player>();
 
             if (player)
