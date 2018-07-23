@@ -40,13 +40,6 @@ public class Cam : MonoBehaviour
                 transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
             }
 
-            // Game is over
-            else if (game.gameState == GameState.Over)
-            {
-                // Face up smoothly
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-faceUp, 0, 0), Time.deltaTime * faceUpSpeed);
-            }
-
             // Handle side movement (on x axis only)
             Vector3 toPosition = transform.position;
             toPosition.x = sideMovement * sideLookFactor * -1;
@@ -55,6 +48,13 @@ public class Cam : MonoBehaviour
             // Handle side rotation (on y axis only)
             Quaternion toRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, sideRotation * sideLookFactor, transform.rotation.eulerAngles.z);
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * sideMovementSpeed);
+        }
+
+        // Game is over
+        if (game.gameState == GameState.Over)
+        {
+            // Face up smoothly
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(-faceUp, 0, 0), Time.deltaTime * faceUpSpeed);
         }
     }
 }
