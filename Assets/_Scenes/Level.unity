@@ -1143,7 +1143,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh42950
+  m_Name: pb_Mesh13856
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.6732015, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.8257863, b: 0.9528302, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1459,7 +1459,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: FIREBALL SWIPE
+  m_Text: LEAD BLUE
 --- !u!222 &1109803911
 CanvasRenderer:
   m_ObjectHideFlags: 0

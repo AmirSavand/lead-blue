@@ -1,10 +1,10 @@
-﻿# Fireball Swipe
+﻿# Lead Blue
 
-Lead the fireball to the path of survival.
+Lead the blue ball to the path of survival.
 
 ## Todo
 
-- [ ] Rename project.
+- [x] Rename project.
 - [x] New hit: Laser.
 - [x] New hit: Pounder.
 - [x] Camera side movement.

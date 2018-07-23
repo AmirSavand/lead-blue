@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Savand Bros
-  productName: Fireball Swipe
+  productName: Lead Blue
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.5882353, g: 0.9450981, b: 1, a: 1}
@@ -150,8 +150,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 16.9
   applicationIdentifier:
-    Standalone: com.SavandBros.FireballSwipe
-    iOS: com.SavandBros.FireballSwipe
+    Standalone: com.SavandBros.LeadBlue
+    iOS: com.SavandBros.LeadBlue
   buildNumber:
     iOS: 1
   AndroidBundleVersionCode: 1
