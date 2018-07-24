@@ -42,41 +42,29 @@ public class Player : MonoBehaviour
         if (isDead || game.gameState != GameState.Run)
             return;
 
-        // Can move (is jumping)
-        if (canPush)
+        // Press right key
+        if (Input.GetKeyUp(KeyCode.RightArrow))
         {
-            int hitIndex = -1;
+            GoToTarget(0);
+        }
 
-            // Press right key
-            if (Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                hitIndex = 0;
-            }
+        // Press up key
+        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            GoToTarget(1);
+        }
 
-            // Press up key
-            else if (Input.GetKeyUp(KeyCode.UpArrow))
-            {
-                hitIndex = 1;
-            }
+        // Press left key
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            GoToTarget(2);
+        }
 
-            // Press left key
-            else if (Input.GetKeyUp(KeyCode.LeftArrow))
-            {
-                hitIndex = 2;
-            }
-
-            // Press any key
-            if (hitIndex != -1)
-            {
-                GoToTarget(hitIndex);
-            }
-
-            // If there's any velocity
-            if (rb.velocity != Vector3.zero)
-            {
-                // Role the ball (slow)
-                model.Rotate(Time.deltaTime * rollSpeed / 10, 0, 0);
-            }
+        // If there's any velocity
+        if (rb.velocity != Vector3.zero)
+        {
+            // Role the ball (slow)
+            model.Rotate(Time.deltaTime * rollSpeed / 10, 0, 0);
         }
 
         // Going to a hit
@@ -125,6 +113,9 @@ public class Player : MonoBehaviour
      */
     public void GoToTarget(int index)
     {
+        // Check if can move and is not dead
+        if (!canPush || isDead) return;
+
         // Find the hit of the floor
         Hit hit = currentFloor.nextFloor.hits[index];
 

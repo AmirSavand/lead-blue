@@ -62,7 +62,7 @@ public class Game : MonoBehaviour
             time = Mathf.Clamp(time - Time.deltaTime, 0, time);
 
             // Update time text (UI)
-            timeSlider.value = time / initialTime;
+            timeSlider.value = time / (initialTime * 1.5f);
 
             // Ran out of time or player is dead
             if (time == 0 || player == null)

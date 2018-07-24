@@ -8185,6 +8185,8 @@ MonoBehaviour:
   rotateSpeed: 150
   destroyOnKill: 1
   killCollector: 0
+  activateRigidbodiesAfterTime: 0
+  rigidbodiesToActivate: []
   floor: {fileID: 0}
 --- !u!114 &114125026394555862
 MonoBehaviour:
