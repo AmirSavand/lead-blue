@@ -2623,7 +2623,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -7283,7 +7283,7 @@ MonoBehaviour:
   canPush: 1
   jumpForce: 1500
   jumpMoveDelay: 0.1
-  rollSpeed: 500
+  rollSpeed: 1000
   moveParticle: {fileID: 1761068422}
   model: {fileID: 1912470078}
   deathEffectPrefab: {fileID: 1022168451527142, guid: 3b3ed5ba6c600f64d99526cb016eb811,
