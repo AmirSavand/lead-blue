@@ -38,27 +38,31 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // No update for dead player or not running game
-        if (isDead || game.gameState != GameState.Run)
-            return;
+        // No update for dead player
+        if (isDead) return;
 
-        // Press right key
-        if (Input.GetKeyUp(KeyCode.RightArrow))
+        // Game is running
+        if (game.gameState == GameState.Run)
         {
-            GoToTarget(0);
+            // Press right key
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                GoToTarget(0);
+            }
+
+            // Press up key
+            else if (Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                GoToTarget(1);
+            }
+
+            // Press left key
+            else if (Input.GetKeyUp(KeyCode.LeftArrow))
+            {
+                GoToTarget(2);
+            }
         }
 
-        // Press up key
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            GoToTarget(1);
-        }
-
-        // Press left key
-        else if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            GoToTarget(2);
-        }
 
         // If there's any velocity
         if (rb.velocity != Vector3.zero)
@@ -159,6 +163,9 @@ public class Player : MonoBehaviour
      */
     public void Kill()
     {
+        // Can't kill what's already dead
+        if (isDead) return;
+
         // Set to dead
         isDead = true;
 
