@@ -29,6 +29,9 @@ public class Game : MonoBehaviour
     public GameObject uiPause;
     public GameObject uiOver;
 
+    [Header("Platform UIs")]
+    public GameObject mobileUI;
+
     [Header("Ref")]
     public Cam cam;
     public Player player;
@@ -41,6 +44,13 @@ public class Game : MonoBehaviour
         foreach (GameObject editorOnlyGameObject in editorOnlyGameObjects)
         {
             Destroy(editorOnlyGameObject);
+        }
+
+        // Not android
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            // Destroy mobile UI
+            Destroy(mobileUI);
         }
     }
 
