@@ -399,7 +399,7 @@ Camera:
   far clip plane: 200
   field of view: 70
   orthographic: 1
-  orthographic size: 2.4
+  orthographic size: 0.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -659,6 +659,9 @@ MonoBehaviour:
   floorSpawner: {fileID: 744091963}
   editorOnlyGameObjects:
   - {fileID: 1799632368}
+  musicSound: {fileID: 0}
+  actionSound: {fileID: 0}
+  pauseSound: {fileID: 0}
 --- !u!1 &706125529
 GameObject:
   m_ObjectHideFlags: 0
@@ -7283,9 +7286,11 @@ MonoBehaviour:
   canPush: 1
   jumpForce: 1500
   jumpMoveDelay: 0.1
-  rollSpeed: 1000
+  rollSpeed: 0
   moveParticle: {fileID: 1761068422}
   model: {fileID: 1912470078}
+  moveSound: {fileID: 0}
+  deathSound: {fileID: 0}
   deathEffectPrefab: {fileID: 1022168451527142, guid: 3b3ed5ba6c600f64d99526cb016eb811,
     type: 2}
 --- !u!54 &1771899350
