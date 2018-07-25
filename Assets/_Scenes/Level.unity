@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1678835, g: 0.2107358, b: 0.28994045, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -506,8 +506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -80, y: 20}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -125, y: 38.4}
+  m_SizeDelta: {x: 250, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519291734
 GameObject:
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   score: 0
-  time: 20
+  time: 25
   scoreText: {fileID: 1667741248}
   finalScoreText: {fileID: 2056769653}
   timeSlider: {fileID: 1552094597}
@@ -1216,7 +1216,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 50, y: 0}
+  m_SizeDelta: {x: 75, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806624657
 MonoBehaviour:
@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.23529412}
   m_EffectDistance: {x: -3, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &806624658
@@ -1253,8 +1253,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 1, b: 0.9401281, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0.9401281, a: 1}
+    m_NormalColor: {r: 0, g: 1, b: 0.9401281, a: 0.627451}
+    m_HighlightedColor: {r: 0, g: 1, b: 0.9401281, a: 0.627451}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -2116,8 +2116,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 25, y: 0}
-  m_SizeDelta: {x: 50, y: 0}
+  m_AnchoredPosition: {x: 38, y: 0}
+  m_SizeDelta: {x: 75, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528134060
 MonoBehaviour:
@@ -2131,7 +2131,7 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.23529412}
   m_EffectDistance: {x: -3, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &1528134061
@@ -2154,8 +2154,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 1, b: 0.9401281, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0.9401281, a: 1}
+    m_NormalColor: {r: 0, g: 1, b: 0.9401281, a: 0.627451}
+    m_HighlightedColor: {r: 0, g: 1, b: 0.9401281, a: 0.627451}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
@@ -11758,8 +11758,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25, y: 40}
-  m_SizeDelta: {x: 50, y: 0}
+  m_AnchoredPosition: {x: -38, y: 40}
+  m_SizeDelta: {x: 75, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014447267
 MonoBehaviour:
@@ -11773,7 +11773,7 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.23529412}
   m_EffectDistance: {x: -3, y: 0}
   m_UseGraphicAlpha: 1
 --- !u!114 &2014447268
@@ -11796,8 +11796,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 1, b: 0.9401281, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0.9401281, a: 1}
+    m_NormalColor: {r: 0, g: 1, b: 0.9401281, a: 0.627451}
+    m_HighlightedColor: {r: 0, g: 1, b: 0.9401281, a: 0.627451}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1

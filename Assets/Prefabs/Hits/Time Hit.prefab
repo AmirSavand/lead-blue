@@ -8306,7 +8306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitName: Time
   score: 0
-  time: 5
+  time: 6
   rotateSpeed: 150
   destroyOnKill: 1
   killCollector: 0
