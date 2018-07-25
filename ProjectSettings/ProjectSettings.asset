@@ -150,6 +150,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 16.9
   applicationIdentifier:
+    Android: com.SavandBros.LeadBlue
     Standalone: com.SavandBros.LeadBlue
     iOS: com.SavandBros.LeadBlue
   buildNumber:
