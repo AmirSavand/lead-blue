@@ -38,3 +38,5 @@ sysinfo.txt
 # Assets
 Assets/ProCore*
 Assets/EffectExamples*
+
+*.keystore
