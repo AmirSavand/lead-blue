@@ -37,6 +37,9 @@ public class Game : MonoBehaviour
     public Player player;
     public FloorSpawner floorSpawner;
     public GameObject[] editorOnlyGameObjects;
+    public AudioSource musicSound;
+    public AudioSource actionSound;
+    public AudioSource pauseSound;
 
     void Awake()
     {
@@ -88,6 +91,10 @@ public class Game : MonoBehaviour
 
                 // Set final score text
                 finalScoreText.text = "+" + score;
+
+                // Change soundtrack sound effect
+                musicSound.pitch = 0.75f;
+                musicSound.volume = 0.5f;
             }
         }
 
@@ -188,6 +195,9 @@ public class Game : MonoBehaviour
 
         // Update game state
         SetGameState(GameState.Run);
+
+        // Play action sound
+        actionSound.Play();
     }
 
     /**
@@ -200,5 +210,8 @@ public class Game : MonoBehaviour
 
         // Update game state
         SetGameState(GameState.Pause);
+
+        // Play pause sound
+        pauseSound.Play();
     }
 }

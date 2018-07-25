@@ -15,6 +15,7 @@ public class Hit : MonoBehaviour
     public Rigidbody[] rigidbodiesToActivate;
 
     public Floor floor;
+    public AudioSource sound;
 
     private bool hitPlayer;
 
@@ -65,12 +66,22 @@ public class Hit : MonoBehaviour
             // Callback
             player.OnHit(this);
 
+            // Detach sound, play it then destory it
+            sound.transform.SetParent(null);
+            sound.Play();
+            Destroy(sound.gameObject, sound.clip.length);
+
             // Should destroy self on hit
             if (destroyOnKill)
             {
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void OnMouseDown()
+    {
+        
     }
 
     public void ActivateRigidbodies()

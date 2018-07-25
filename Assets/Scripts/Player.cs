@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     [Header("Ref")]
     public ParticleSystem moveParticle;
     public Transform model;
+    public AudioSource moveSound;
+    public AudioSource deathSound;
     public GameObject deathEffectPrefab;
 
     private Game game;
@@ -64,17 +66,10 @@ public class Player : MonoBehaviour
         }
 
 
-        // If there's any velocity
+        // If there's velocity
         if (rb.velocity != Vector3.zero)
         {
-            // Role the ball (slow)
-            model.Rotate(Time.deltaTime * rollSpeed / 10, 0, 0);
-        }
-
-        // Going to a hit
-        else if (moveParticle.isPlaying && model != null)
-        {
-            // Role it
+            // Role the ball
             model.Rotate(Time.deltaTime * rollSpeed, 0, 0);
         }
     }
@@ -147,6 +142,9 @@ public class Player : MonoBehaviour
 
             // Store the floor
             currentFloor = currentFloor.nextFloor;
+
+            // Sound
+            moveSound.Play();
         }
     }
 
@@ -180,5 +178,8 @@ public class Player : MonoBehaviour
 
         // Create death effect
         Instantiate(deathEffectPrefab, transform.position, transform.rotation);
+
+        // Death sound
+        deathSound.Play();
     }
 }
