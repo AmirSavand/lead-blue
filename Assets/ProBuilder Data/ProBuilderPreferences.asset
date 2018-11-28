@@ -19,6 +19,7 @@ MonoBehaviour:
   - pbObjExportVertexColors
   - pbObjTextureOffsetScale
   - pbObjQuads
+  - pbExportAsGroup
   m_Int_keys:
   - pbDefaultEditLevel
   - pbDefaultSelectionMode
@@ -31,7 +32,7 @@ MonoBehaviour:
   - pbCurrentMaterialPalette
   m_Color_keys: []
   m_Material_keys: []
-  m_Bool_values: 00010101010101
+  m_Bool_values: 0000000000000000
   m_Int_values: 00000000020000000100000000000000
   m_Float_values:
   - 0

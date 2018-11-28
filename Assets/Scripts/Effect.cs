@@ -1,16 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Effect : MonoBehaviour
 {
-    public ParticleSystem particle;
+    public bool randomForce;
+    public float randomForceMin;
+    public float randomForceMax;
 
-    void Start()
+    public float lifetime;
+
+    private void Start()
     {
-        if (particle)
+        if (lifetime > 0)
         {
-            Destroy(gameObject, particle.main.duration);
+            Destroy(gameObject, lifetime);
+        }
+
+        if (randomForce)
+        {
+            foreach (Rigidbody piece in GetComponentsInChildren<Rigidbody>())
+            {
+                piece.transform.rotation = Random.rotation;
+                piece.AddForce(piece.transform.forward * Random.Range(randomForceMin, randomForceMax));
+            }
         }
     }
 }
