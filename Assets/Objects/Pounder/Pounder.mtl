@@ -1,0 +1,12 @@
+newmtl Pounder_Top
+Kd 0.3396226 0.3396226 0.3396226
+d 1
+
+newmtl Pounder
+Kd 0.8301887 0.8301887 0.8301887
+d 1
+
+newmtl Pounder_Top_2
+Kd 0.8490566 0.3710168 0
+d 1
+
