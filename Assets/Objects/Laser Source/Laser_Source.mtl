@@ -1,0 +1,12 @@
+newmtl Laser_Source
+Kd 0.2641509 0.2641509 0.2641509
+d 1
+
+newmtl Laser_Source_3
+Kd 0.8584906 0.4522457 0
+d 1
+
+newmtl Laser_Source_2
+Kd 0.6509434 0.6509434 0.6509434
+d 1
+
