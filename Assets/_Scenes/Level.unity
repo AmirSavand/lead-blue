@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   score: 0
-  time: 25
+  time: 15
   scoreText: {fileID: 1667741248}
   highScoreText: {fileID: 1548150520}
   finalScoreText: {fileID: 2056769653}
