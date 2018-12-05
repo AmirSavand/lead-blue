@@ -20,6 +20,7 @@ public class Game : MonoBehaviour
 
     [Header("Game UIs")]
     public Text scoreText;
+    public Text highScoreText;
     public Text finalScoreText;
     public Slider timeSlider;
 
@@ -64,6 +65,9 @@ public class Game : MonoBehaviour
 
         // Reset time
         Time.timeScale = 1;
+
+        // Set highscore text
+        highScoreText.text = Storage.HighScore + "";
     }
 
     void Update()
@@ -91,6 +95,14 @@ public class Game : MonoBehaviour
 
                 // Set final score text
                 finalScoreText.text = "+" + score;
+
+                // If broke highscore
+                if (score > Storage.HighScore)
+                {
+                    // Update highscore
+                    Storage.HighScore = score;
+                    Storage.Save();
+                }
 
                 // Change soundtrack sound effect
                 musicSound.pitch = 0.75f;
