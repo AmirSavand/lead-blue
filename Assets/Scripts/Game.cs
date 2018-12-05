@@ -22,6 +22,7 @@ public class Game : MonoBehaviour
     public Text scoreText;
     public Text highScoreText;
     public Text finalScoreText;
+    public Text versionText;
     public Slider timeSlider;
 
     [Header("State UIs")]
@@ -68,6 +69,9 @@ public class Game : MonoBehaviour
 
         // Set highscore text
         highScoreText.text = Storage.HighScore + "";
+
+        // Set version text
+        versionText.text = Application.version;
     }
 
     void Update()
