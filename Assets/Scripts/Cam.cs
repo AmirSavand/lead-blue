@@ -46,7 +46,11 @@ public class Cam : MonoBehaviour
             transform.position = Vector3.Slerp(transform.position, toPosition, Time.deltaTime * sideMovementSpeed);
 
             // Handle side rotation (on y axis only)
-            Quaternion toRotation = Quaternion.Euler(transform.rotation.eulerAngles.x, sideRotation * sideLookFactor, transform.rotation.eulerAngles.z);
+            Quaternion toRotation = Quaternion.Euler(
+                x: transform.rotation.eulerAngles.x,
+                y: sideRotation * sideLookFactor,
+                z: transform.rotation.eulerAngles.z
+            );
             transform.rotation = Quaternion.Slerp(transform.rotation, toRotation, Time.deltaTime * sideMovementSpeed);
         }
 
