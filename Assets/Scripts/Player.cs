@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         rb.Sleep();
 
         // Push up
-        rb.AddForce(Vector3.up * jumpForce);
+        rb.AddForce(Vector3.up * jumpForce * rb.mass);
 
         // Can move after a while
         Invoke("UpdateMoveStatus", jumpMoveDelay);
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
             transform.Rotate(pushFaceUp, 0, 0);
 
             // Push to hit
-            rb.AddRelativeForce(0, 0, pushForce);
+            rb.AddRelativeForce(0, 0, pushForce * rb.mass);
 
             // Can't move
             canPush = false;

@@ -8605,11 +8605,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
-  pushForce: 15000
+  pushForce: 3000
   pushFaceUp: -5
   canPush: 1
-  jumpForce: 3000
-  jumpMoveDelay: 1
+  jumpForce: 700
+  jumpMoveDelay: 0.05
   rollSpeed: 500
   moveParticle: {fileID: 1761068422}
   model: {fileID: 949181575}
