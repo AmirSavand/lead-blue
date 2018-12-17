@@ -18,11 +18,11 @@ public class Player : MonoBehaviour
     public float rollSpeed;
 
     [Header("Ref")]
-    public ParticleSystem moveParticle;
     public Transform model;
     public AudioSource moveSound;
     public AudioSource deathSound;
     public GameObject deathEffectPrefab;
+    public float deathTime;
 
     private Game game;
     private Rigidbody rb;
@@ -94,9 +94,6 @@ public class Player : MonoBehaviour
      */
     public void Jump()
     {
-        // Stop move particle
-        moveParticle.Stop();
-
         // Reset velocity
         rb.Sleep();
 
@@ -123,9 +120,6 @@ public class Player : MonoBehaviour
         {
             // Callback
             game.OnPlayerMove(index);
-
-            // Start move particle
-            moveParticle.Play();
 
             // Reset velocity
             rb.Sleep();
@@ -173,8 +167,8 @@ public class Player : MonoBehaviour
         // Destroy model
         Destroy(model.gameObject);
 
-        // Destroy player after particle
-        Destroy(gameObject, moveParticle.main.duration);
+        // Destroy player after a while
+        Destroy(gameObject, deathTime);
 
         // Create death effect
         Instantiate(deathEffectPrefab, transform.position, transform.rotation);
