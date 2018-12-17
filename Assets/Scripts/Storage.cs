@@ -3,6 +3,7 @@
 public class Storage : MonoBehaviour
 {
     public static int HighScore;
+    public static int Coins;
 
     public static bool EnableSound;
     public static bool EnableMusic;
@@ -21,6 +22,7 @@ public class Storage : MonoBehaviour
 
         // Load stats
         HighScore = PlayerPrefs.GetInt("stat-high-score");
+        Coins = PlayerPrefs.GetInt("stat-coins");
 
         // Load switches (bools)
         EnableSound = PlayerPrefs.GetInt("enable-sound", 1) == 1;
@@ -34,6 +36,7 @@ public class Storage : MonoBehaviour
     {
         // Set stats
         PlayerPrefs.SetInt("stat-high-score", HighScore);
+        PlayerPrefs.SetInt("stat-coins", Coins);
 
         // Set switches
         PlayerPrefs.SetInt("enable-sound", EnableSound ? 1 : 0);

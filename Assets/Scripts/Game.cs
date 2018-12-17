@@ -112,8 +112,13 @@ public class Game : MonoBehaviour
                 {
                     // Update highscore
                     Storage.HighScore = score;
-                    Storage.Save();
                 }
+
+                // Update coins
+                Storage.Coins += score;
+
+                // Save data
+                Storage.Save();
 
                 // Change soundtrack sound effect
                 musicSound.pitch = 0.75f;
