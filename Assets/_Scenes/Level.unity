@@ -684,7 +684,7 @@ MonoBehaviour:
   smoothTime: 0.1
   distance: 10
   faceUp: 30
-  faceUpSpeed: 0.5
+  faceUpSpeed: 0.75
   sideRotation: 6
   sideMovement: 3
   sideRotationSpeed: 3
