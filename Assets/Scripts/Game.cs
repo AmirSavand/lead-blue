@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public enum GameState
 {
@@ -33,6 +34,12 @@ public class Game : MonoBehaviour
 
     [Header("Platform UIs")]
     public GameObject mobileUI;
+
+    [Header("Time Cycle")]
+    public Color[] timeColors;
+    public Color timeColor;
+    public float timeColorDuration = 1;
+    public float timeColorTimer;
 
     [Header("Ref")]
     public Cam cam;
@@ -129,6 +136,28 @@ public class Game : MonoBehaviour
                 Resume();
             }
         }
+
+        // Time cycle for the current color has ended
+        if (timeColorTimer <= Time.deltaTime)
+        {
+            // Next color
+            ChangeTimeCycleColor();
+
+            // Reset timer
+            timeColorTimer = timeColorDuration;
+        }
+
+        // Time cycle in progress
+        else
+        {
+            // Change camera background and fog color
+            Camera.main.backgroundColor = RenderSettings.fogColor = Color.Lerp(
+                Camera.main.backgroundColor, timeColor, Time.deltaTime / timeColorTimer
+            );
+
+            // Update time cycle timer
+            timeColorTimer -= Time.deltaTime;
+        }
     }
 
     /**
@@ -191,6 +220,26 @@ public class Game : MonoBehaviour
         uiRun.SetActive(gameState == GameState.Run);
         uiPause.SetActive(gameState == GameState.Pause);
         uiOver.SetActive(gameState == GameState.Over);
+    }
+
+    /**
+     * Chang
+     */
+    public void ChangeTimeCycleColor()
+    {
+        // Get current color index
+        int index = Array.IndexOf<Color>(timeColors, timeColor);
+
+        // If it the last one?
+        if (index == timeColors.Length - 1)
+        {
+            // Reset to cycle again
+            timeColor = timeColors[0];
+            return;
+        }
+
+        // Cycle to next color
+        timeColor = timeColors[index + 1];
     }
 
     /**
