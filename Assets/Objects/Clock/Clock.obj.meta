@@ -12,6 +12,9 @@ ModelImporter:
     400004: Pipe
     400006: //RootNode
     2100000: Default_Prototype
+    2100002: Cylinder_0Mat
+    2100004: Cylinder_1Mat
+    2100006: PipeMat
     2300000: Cylinder_0
     2300002: Cylinder_1
     2300004: Pipe
@@ -55,6 +58,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -79,6 +83,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
