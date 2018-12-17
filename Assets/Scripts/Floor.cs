@@ -28,6 +28,9 @@ public class Floor : MonoBehaviour
         // Store start position
         moveToPosition = transform.position;
 
+        // Detatch the next floor transform because it should not be moved
+        nextFloorTransform.parent = null;
+
         // Set to start position from Z axis
         transform.position = moveToPosition + new Vector3(0, moveFromY, 0);
 
