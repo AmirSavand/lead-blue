@@ -21,6 +21,7 @@ public class Floor : MonoBehaviour
 
     [Header("Ref")]
     public Floor nextFloor;
+    public Transform nextFloorTransform;
 
     void Start()
     {

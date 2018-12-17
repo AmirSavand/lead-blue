@@ -2,20 +2,16 @@
 
 public class FloorSpawner : MonoBehaviour
 {
+    public int spawnInitial = 3;
     public GameObject floorPrefab;
 
-    public int initialSpawn = 3;
-
-    public float nextSpawnDistance;
-    public float nextSpawnDistanceFactor = 18;
-
-    private int floorCounter;
+    private int spawnCounter;
     private Floor lastFloor;
 
     void Start()
     {
         // Initial spawn
-        for (int i = 0; i < initialSpawn; i++)
+        for (int i = 0; i < spawnInitial; i++)
         {
             Spawn();
         }
@@ -26,17 +22,22 @@ public class FloorSpawner : MonoBehaviour
      */
     public void Spawn()
     {
+        Vector3 spawnPosition = new Vector3();
+        Quaternion spawnRotaiton = Quaternion.identity;
+
+        // This is the first floor
+        if (lastFloor != null)
+        {
+            // Get spawn position and rotation of next floor transform of last floor
+            spawnPosition = lastFloor.nextFloorTransform.position;
+            spawnRotaiton = lastFloor.nextFloorTransform.rotation;
+        }
+
         // Spawn the floor
-        Floor floor = Instantiate(floorPrefab).GetComponent<Floor>();
-
-        // Move it next to the last floor
-        floor.transform.position = new Vector3(0, 0, nextSpawnDistance);
-
-        // Increase the distance for next spawn
-        nextSpawnDistance += nextSpawnDistanceFactor;
+        Floor floor = Instantiate(floorPrefab, spawnPosition, spawnRotaiton).GetComponent<Floor>();
 
         // Set name of floor with ID
-        floor.transform.name = "Floor " + floorCounter;
+        floor.transform.name = "Floor " + spawnCounter;
 
         // This is not the first floor
         if (lastFloor)
@@ -59,6 +60,6 @@ public class FloorSpawner : MonoBehaviour
         lastFloor = floor;
 
         // Increase floor counter
-        floorCounter++;
+        spawnCounter++;
     }
 }
