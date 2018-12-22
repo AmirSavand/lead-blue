@@ -79,11 +79,6 @@ public class Hit : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-        
-    }
-
     public void ActivateRigidbodies()
     {
         foreach (Rigidbody rb in rigidbodiesToActivate)
