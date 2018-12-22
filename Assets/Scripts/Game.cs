@@ -22,6 +22,7 @@ public class Game : MonoBehaviour
     [Header("Game UIs")]
     public Text scoreText;
     public Text highScoreText;
+    public Text coinsText;
     public Text finalScoreText;
     public Text versionText;
     public Slider timeSlider;
@@ -79,6 +80,10 @@ public class Game : MonoBehaviour
 
         // Set version text
         versionText.text = Application.version;
+
+        // Set coins text
+        if (coinsText)
+            coinsText.text = Storage.Coins + "";
     }
 
     void Update()
