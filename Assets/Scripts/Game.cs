@@ -33,9 +33,6 @@ public class Game : MonoBehaviour
     public GameObject uiPause;
     public GameObject uiOver;
 
-    [Header("Platform UIs")]
-    public GameObject mobileUI;
-
     [Header("Time Cycle")]
     public Color[] timeColors;
     public Color timeColor;
@@ -57,13 +54,6 @@ public class Game : MonoBehaviour
         foreach (GameObject editorOnlyGameObject in editorOnlyGameObjects)
         {
             Destroy(editorOnlyGameObject);
-        }
-
-        // Not android
-        if (Application.platform != RuntimePlatform.Android)
-        {
-            // Destroy mobile UI
-            Destroy(mobileUI);
         }
     }
 
@@ -288,5 +278,13 @@ public class Game : MonoBehaviour
 
         // Play pause sound
         pauseSound.Play();
+    }
+
+    /**
+     * Exit game
+     */
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
